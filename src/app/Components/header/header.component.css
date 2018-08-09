@@ -1,0 +1,15 @@
+mat-toolbar-row{
+    display: flex;
+    justify-content: space-evenly;
+    /* padding:0 12.5%; */
+}
+
+.active{
+    color: red;
+}
+
+a{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}

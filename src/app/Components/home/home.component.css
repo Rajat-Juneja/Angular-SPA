@@ -1,0 +1,82 @@
+button.mat-menu-item{
+    background:#3F51B5 !important;
+    margin: 2.5% 0;
+    text-align: center;
+}
+
+div.center,h3{
+    text-align: center;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+    border: 1.5px solid transparent;
+    padding: 3%;
+    border-radius: 3px;
+    /* transition: 0.5s ease all; */
+    /* font-weight: 900; */
+}
+
+button.mat-menu-item:hover a{
+    animation: anim 3s ease-in-out backwards infinite;
+    animation-delay: 0.5s;
+    /* border-bottom: 2px solid white; */
+}
+
+@keyframes anim{
+    0%{
+        border-bottom:1.5px solid transparent;
+        border-top: 1.5px solid transparent;
+        border-left: 1.5px solid transparent;
+        border-right: 1.5px solid transparent; 
+    }
+    12.5%{
+        border-bottom:1.5px solid white;
+        border-top: 1.5px solid transparent;
+        border-left: 1.5px solid transparent;
+        border-right: 1.5px solid transparent; 
+    }
+    25%{
+        border-bottom:1.5px solid white;
+        border-top: 1.5px solid transparent;
+        border-left: 1.5px solid white;
+        border-right: 1.5px solid transparent; 
+    }
+    37.5%{
+        border-bottom:1.5px solid white;
+        border-top: 1.5px solid white;
+        border-left: 1.5px solid white;
+        border-right: 1.5px solid transparent; 
+    }
+    50%{
+        border-bottom:1.5px solid white;
+        border-top: 1.5px solid white;
+        border-left: 1.5px solid white;
+        border-right: 1.5px solid white; 
+    }
+    62.5%{
+        border-bottom:1.5px solid transparent;
+        border-top: 1.5px solid white;
+        border-left: 1.5px solid white;
+        border-right: 1.5px solid white;
+    }
+    75%{
+        border-bottom:1.5px solid transparent;
+        border-top: 1.5px solid white;
+        border-left: 1.5px solid transparent;
+        border-right: 1.5px solid white;
+    }
+    87.5%{
+        border-bottom:1.5px solid transparent;
+        border-top: 1.5px solid transparent;
+        border-left: 1.5px solid transparent;
+        border-right: 1.5px solid white;
+    }
+    100%{
+        border-bottom:1.5px solid transparent;
+        border-top: 1.5px solid transparent;
+        border-left: 1.5px solid transparent;
+        border-right: 1.5px solid white;
+    }
+}

@@ -1,0 +1,16 @@
+<h3>Welcome to Home Page</h3>
+<div class="center">
+  
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item><a href="https://www.facebook.com/rajat.juneja.1998" target="_blank"> Facebook</a></button>
+    <button mat-menu-item><a href="https://github.com/rajat-juneja" target="_blank"> Github</a></button>
+    <button mat-menu-item><a href="https://www.linkedin.com/in/rajat-juneja/" target="_blank">Linkedin</a></button>
+  </mat-menu>
+  
+
+  <h2>Links to My Accounts :</h2>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+     <mat-icon>subdirectory_arrow_right</mat-icon>
+    
+  </button>
+</div>

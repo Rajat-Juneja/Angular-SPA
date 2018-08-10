@@ -9,20 +9,22 @@ import { Joke } from './../../Models/jokes';
 })
 export class ProductComponent implements OnInit {
   jokes:Joke[];
+  public flag:boolean;
   constructor(private service:AjaxService) {
-
+    this.flag=false;
    }
 
   ngOnInit() {
+    if(!this.jokes){
     var Sub = this.service.loadJokes().subscribe((data)=>{
-      console.log("JOKE IS",data);
-      this.jokes=data.value;
+      this.jokes=data["value"];
+      this.flag=!this.flag;
     },(err)=>{
       console.log("ERR IS",err);
     },()=>{
-      console.log("Complete");
       Sub.unsubscribe();
     })
   }
+}
 
 }

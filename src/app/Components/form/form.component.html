@@ -1,3 +1,52 @@
-<p>
-  form works!
-</p>
+<div class="form">
+
+<h1 >Please Fill this Form</h1>
+
+<form [formGroup]="frm" novalidate (submit)="submitForm()">
+  First Name: 
+  <input type="text" placeholder="Enter your first name" formControlName="fname">
+  <div *ngIf="frm.get('fname').touched && frm.get('fname').errors">
+      <span *ngIf="frm.get('fname').errors['required']">Please enter your first name</span>
+      <span *ngIf="!frm.get('fname').errors['required'] && frm.get('fname').errors['minlength']">Min Length should be 3 characters</span>
+      <span *ngIf="!frm.get('fname').errors['required'] && frm.get('fname').errors['maxlength']">Max Length should be 15 characters</span>
+      <span *ngIf="frm.get('fname').invalid && !frm.get('fname').errors['required'] && !frm.get('fname').errors['minlength'] && !frm.get('fname').errors['maxlength']">Given name is invalid</span>
+    </div>
+    Last Name: 
+  <input type="text" placeholder="Enter your last name" formControlName="lname">
+  <div *ngIf="frm.get('lname').touched && frm.get('lname').errors">
+      <span *ngIf="frm.get('lname').errors['required']">Please enter your last name</span>
+      <span *ngIf="!frm.get('lname').errors['required'] && frm.get('lname').errors['minlength']">Min Length should be 3 characters</span>
+      <span *ngIf="!frm.get('lname').errors['required'] && frm.get('lname').errors['maxlength']">Max Length should be 15 characters</span>
+      <span *ngIf="frm.get('lname').invalid && !frm.get('lname').errors['required'] && !frm.get('lname').errors['minlength'] && !frm.get('lname').errors['maxlength']">Given name is invalid</span>
+    </div>
+    Email id: 
+    <input type="email" placeholder="Enter your email" formControlName="email">
+    <div *ngIf="frm.get('email').touched && frm.get('email').errors">
+        <span *ngIf="frm.get('email').errors['required']">Please enter your Email</span>
+        <span *ngIf="!frm.get('email').errors['required'] && frm.get('email').errors['email']">Given email is invalid</span>
+        <span *ngIf="frm.get('email').invalid && !frm.get('email').errors['required'] && !frm.get('email').errors['email']">Given email is invalid</span>
+      </div>
+      Mobile Number: 
+      <input type="text" placeholder="Enter your Mobile Number" formControlName="mobile">
+      <div *ngIf="frm.get('mobile').touched && frm.get('mobile').errors">
+          <span *ngIf="frm.get('mobile').errors['required']">Please enter your Mobile Number</span>
+          <span *ngIf="frm.get('mobile').invalid && !frm.get('mobile').errors['required']">Given mobile number is invalid</span>
+        </div>
+
+      <span (click)="addHobby()" class="add">Add Hobbies <i class="fa fa-plus" aria-hidden="true"></i></span>
+     <ul formArrayName="hobbies">
+      <li class="hobby" *ngFor="let item of frm.get('hobbies').controls;let i = index">
+        <span class="adding"><input type="text" placeholder="Enter your Hobby" [formControlName]="i"><i class="fa fa-trash" (click)="removeHobby(i,item)" aria-hidden="true"></i></span>
+        <div *ngIf="item.touched && item.errors">
+          <span *ngIf="item.errors['required']">Please enter a hobby</span>
+          <span *ngIf="!item.errors['required'] && item.invalid">The length of hobby should be 3<length<50 and characters only.</span>
+        </div>
+      </li>
+    </ul>
+      <!-- <br> -->
+    <button type="submit" value="Submit" [disabled]="frm.invalid" >Submit</button>
+
+    <!-- <span>{{frm.get('fname').errors | json}} {{frm.get('lname').errors | json}}</span> -->
+</form>
+
+</div>

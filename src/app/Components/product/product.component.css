@@ -1,0 +1,12 @@
+div.imgg{
+    width: 100%;
+    text-align: center;
+}
+
+div.imgg img{
+    width: 50%;
+}
+
+p.just{
+    text-align: justify;
+}
